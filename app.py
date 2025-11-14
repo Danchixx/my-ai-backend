@@ -11,8 +11,8 @@ app = Flask(__name__)
 CORS(app)
 
 TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
-TOGETHER_API_URL = "https://api.together.xyz/v1/chat/completions"
-MODEL_NAME = "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free"
+TOGETHER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
+MODEL_NAME = "meta-llama/llama-3.3-70b-instruct:free"
 
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'doc', 'docx', 'ppt', 'pptx'}
@@ -567,4 +567,5 @@ def health_check():
     })
 
 if __name__ == '__main__':
+
     app.run(debug=True, host='0.0.0.0', port=5000)
